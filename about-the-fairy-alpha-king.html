@@ -3,33 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About the Fairy Alpha King</title>
+    <title>About John-Paul McCreary</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        
         body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
             margin: 0;
-            font-family: Arial, sans-serif;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .bio-container {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            margin: 20px;
+            padding: 30px;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .bio-container h1 {
+            color: #FF00FF;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .bio-container p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+            overflow: hidden;
+            opacity: 0;
+            animation: textFadeIn 1s forwards;
+        }
+        .bio-container .highlight {
+            color: #FF00FF;
+            font-weight: bold;
         }
         .back-button {
-            margin-top: 20px;
+            text-align: center;
+            margin-top: 40px;
         }
         .back-button a {
-            padding: 10px 20px;
-            background-color: #007BFF;
+            background: #28a745;
             color: white;
+            padding: 15px;
+            text-align: center;
+            display: block;
+            width: 200px;
+            margin: 20px auto;
             text-decoration: none;
             border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s, transform 0.3s;
+        }
+        .back-button a:hover {
+            background: #218838;
+            transform: translateY(-2px);
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes textFadeIn {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
-    <h1>About the Fairy Alpha King</h1>
-    <div class="back-button">
-        <a href="index.html">Back to Homepage</a>
+    <div class="bio-container">
+        <h1>About John-Paul McCreary</h1>
+        <p id="bio-text"></p>
+        <div class="back-button">
+            <a href="index.html">Back to Homepage</a>
+        </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const bioText = `Nice to meet you. I'm John-Paul, also known as JP, the Fairy Alpha King.
+
+Welcome to my digital realm! I'm a web developer from Oklahoma City, Oklahoma, and I'm passionate about bringing people's visions to life online. Though I'm relatively new to web development, I thrive on challenges and deliver personalized webpages that meet your needs. If you find my work valuable, I'm always open to compensation.
+
+In addition to web development, I'm known as The Digital Doctor for my expertise in diagnosing and fixing iPhone issues. Whether your phone's battery drains quickly, apps keep crashing, or it's just running slow, I can help restore it to its optimal performance.
+
+Fashion is another area where I excel. I have a unique fashion sense and specialize in bleaching and coloring hair. While I don't cut hair myself, I can recommend excellent stylists from my Rolodex. When it comes to style, you'll always find me standing out in any room.
+
+I've been playing pool for years and usually come out on top in casual games. In Pokémon Go, I'm constantly catching and evolving Pokémon, and I'm getting better at battling.
+
+My personal philosophy is to "always be camera ready." This means maintaining a clean and presentable appearance and environment at all times, so you're always prepared for a photo.
+
+I'm also proud of my mom, Donna Taylor, who has a lifelong passion for sewing. We're currently developing a prototype for a wallet pocket that attaches to a belt, offering extra storage and convenience. It's an exciting project that showcases her creativity and skill.
+
+Explore my world and connect with me through the essential links below. Whether you're interested in my services or just want to learn more about what I do, I'm here to help!`;
+
+            const bioContainer = document.getElementById("bio-text");
+            const paragraphs = bioText.split('\n\n'); // Split the text into paragraphs
+
+            function displayText() {
+                paragraphs.forEach((paragraph, index) => {
+                    setTimeout(() => {
+                        const p = document.createElement('p');
+                        p.textContent = paragraph;
+                        p.style.animationDelay = `${index * 0.5}s`; // Stagger the animation delay for each paragraph
+                        p.style.animation = 'textFadeIn 1s forwards';
+                        bioContainer.appendChild(p);
+                    }, index * 1000); // Display each paragraph with a 1-second interval
+                });
+            }
+
+            displayText();
+        });
+    </script>
 </body>
 </html>
