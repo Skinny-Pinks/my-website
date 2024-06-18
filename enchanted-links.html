@@ -5,29 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enchanted Links</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
         body {
+            background-color: #000000;
+            color: #FF00FF;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
+        }
+        .link-box {
+            display: inline-block;
+            width: 250px;
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid #FF00FF;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .link-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .link-box a {
+            display: block;
+            margin-top: 10px;
+            color: #FF00FF;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .link-box a:hover {
+            text-decoration: underline;
+        }
+        .link-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 0, 255, 0.5);
         }
         .back-button {
-            margin-top: 20px;
+            text-align: center;
+            margin-top: 40px;
         }
         .back-button a {
-            padding: 10px 20px;
-            background-color: #007BFF;
+            background: #28a745;
             color: white;
+            padding: 15px;
+            text-align: center;
+            display: block;
+            width: 200px;
+            margin: 20px auto;
             text-decoration: none;
             border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s, transform 0.3s;
+        }
+        .back-button a:hover {
+            background: #218838;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
     <h1>Enchanted Links</h1>
+    <div class="link-box">
+        <img src="https://lh3.googleusercontent.com/Vl2H6GHJwjdL81yOzsYrmcbnFGmDzAKGGewf7hsfi-g6H845lum0zCOO44CWR5CzQTh8v8BDuSdU5iK8lnDRCC8=w1280" alt="Snapchat Image">
+        <a href="https://snapchat.com/t/umBgFCox" target="_blank">Snapchat</a>
+    </div>
+    <div class="link-box">
+        <img src="https://lh6.googleusercontent.com/sonmb5ce0gGiav5nL_aqRmHdcjCFEIU4Akkn0YowKuHSwGABBFJcDMZbIeWCSfu669fc4ql8MckyDtM-ikcMw4I=w1280" alt="Jukebox for Tramps Image">
+        <a href="https://apps.apple.com/us/app/ami-music/id640607231" target="_blank">Jukebox for Tramps</a>
+    </div>
+    <div class="link-box">
+        <img src="https://lh5.googleusercontent.com/TqE9TU_b0zy30O76nl1oxbUzZhHjbz-Xay22ZVctj4Icf2jGNKvJ_0yeIhxlDaHB2Dk1jwzk7H8LF-JOxFoCWiM=w1280" alt="Futuristic Enchantment Image">
+        <a href="https://sites.google.com/view/futuristic-enchantment/home?authuser=0" target="_blank">The Futuristic Enchantment of the Fairy Alpha King</a>
+    </div>
     <div class="back-button">
         <a href="index.html">Back to Homepage</a>
     </div>
