@@ -3,33 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Thread Wizard</title>
+    <title>Mom's Magic Threads</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        @keyframes thread-animation {
+            0% { color: #FF00FF; }
+            50% { color: #fff; }
+            100% { color: #FF00FF; }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes zoom {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes splash {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
         body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
             margin: 0;
-            font-family: Arial, sans-serif;
+            padding: 0;
+            background: linear-gradient(45deg, #000, #1a1a1a);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            background: #1a1a1a;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+        h1, h2 {
+            color: #FF00FF;
+            margin-bottom: 20px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            animation: bounce 2s infinite;
+        }
+        h2 {
+            margin-top: 40px;
+            border-bottom: 2px solid #FF00FF;
+            padding-bottom: 10px;
+            font-size: 2em;
+        }
+        p, li {
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li::before {
+            content: "•";
+            color: #FF00FF;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        .contact-info {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .contact-info p {
+            margin-bottom: 5px;
+        }
+        .contact-info a {
+            color: #FF00FF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+            animation: zoom 0.5s forwards;
+        }
+        .threadwizard-section {
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            margin-bottom: 40px;
+        }
+        .logo {
+            font-size: 2em;
+            color: #FF00FF;
+            text-align: center;
+            animation: thread-animation 2s infinite, bounce 2s infinite;
+            margin-bottom: 20px;
+        }
+        .highlight {
+            color: #FF00FF;
+            font-weight: bold;
+            animation: bounce 2s infinite;
+        }
+        .slide-in {
+            animation: slideInLeft 1s ease-out forwards;
+        }
+        .splash {
+            animation: splash 1s ease-out forwards;
         }
         .back-button {
-            margin-top: 20px;
+            text-align: center;
+            margin-top: 40px;
         }
         .back-button a {
-            padding: 10px 20px;
-            background-color: #007BFF;
+            background: #28a745;
             color: white;
+            padding: 15px;
+            text-align: center;
+            display: block;
+            width: 200px;
+            margin: 20px auto;
             text-decoration: none;
             border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s, transform 0.3s;
+        }
+        .back-button a:hover {
+            background: #218838;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
-    <h1>The Thread Wizard</h1>
-    <div class="back-button">
-        <a href="index.html">Back to Homepage</a>
+    <div class="container">
+        <h1>Mom’s Magic Threads</h1>
+        <p>Welcome to <span class="highlight">Mom’s Magic Threads</span>, where creativity and craftsmanship come together.</p>
+        
+        <div class="threadwizard-section">
+            <div class="logo">TheThreadWizard</div>
+            <p>Donna Taylor, known as <span class="highlight">TheThreadWizard</span>, is my amazing mom who has been passionate about sewing and embroidery for most of her life. With her state-of-the-art sewing machine, she can create intricate and beautiful designs, bringing your ideas to life with precision and artistry. It’s incredible to see her take a design and, after a few versions, bring it to fruition. While she can’t make a shirt or pants from scratch, she can take your existing garments and turn them into something personal and unique. From hats to shirts to pants, she can permanently etch an embroidered photo or design into your fabric, making it truly special.</p>
+        </div>
+
+        <h2 class="slide-in" style="animation-delay: 0.5s;">Current Projects</h2>
+        <p class="slide-in" style="animation-delay: 0.5s;">One of our exciting projects is a prototype for a wallet pocket that attaches to a belt. This innovative design provides extra storage and convenience, especially for garments without pockets. It’s perfect for adding a functional and stylish touch to any outfit.</p>
+
+        <h2 class="slide-in" style="animation-delay: 1s;">Services Offered</h2>
+        <ul class="slide-in" style="animation-delay: 1s;">
+            <li>Custom Embroidery: Personalize your garments, accessories, or home decor with unique embroidery designs.</li>
+            <li>Bespoke Creations: From custom clothing to unique fabric accessories, if you can dream it, TheThreadWizard can make it.</li>
+            <li>Quilting: Donna also creates amazing quilts that combine beauty and functionality, perfect for gifts or adding a cozy touch to your home.</li>
+        </ul>
+
+        <h2 class="slide-in" style="animation-delay: 1.5s;">Beta Test with Us</h2>
+        <p class="slide-in" style="animation-delay: 1.5s;">Right now, we’re in the process of refining our offerings. Typically, it takes two or three days for an embroidered item to become available. We’re still working out the costs, so if you want to beta test with us, we’d love your interest and ideas. Your feedback will help us improve and perfect our craft.</p>
+
+        <div class="contact-info splash" style="animation-delay: 2s;">
+            <h2>Get in Touch</h2>
+            <p>If you’re interested in any of these services or have a unique project in mind, don’t hesitate to reach out. Feel free to call <span class="highlight">TheThreadWizard</span>, Donna Taylor, and ask what she can do for you.</p>
+            <p>We’re here to make your vision a reality. You can contact Donna at <a href="tel:4058088333">405-808-8333</a>.</p>
+        </div>
+        
+        <div class="back-button">
+            <a href="index.html">Back to Homepage</a>
+        </div>
     </div>
 </body>
 </html>
