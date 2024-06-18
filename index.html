@@ -5,28 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Futuristic Enchantment of the Fairy</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Roboto+Slab:wght@300&family=Playfair+Display&display=swap');
+        
         body {
-            background: url('background-image.jpg') no-repeat center center fixed; 
+            margin: 0;
+            height: 100vh;
+            background-image: url('https://lh3.googleusercontent.com/JjEY7l83jxhj4WmFdDkW2lirJ31u-PbsMo6kq4a9VL4hwIzaY7iKVHcTXzMghR7lUCsupkLY_ff5iUbrPFJq4-tDPHktEqpeoLSg5XqohXv7vq2-tpvDwgtzJmrjsU3-5Q=w1280');
             background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            height: 100vh;
-            margin: 0;
+            align-items: center;
             font-family: Arial, sans-serif;
-            color: white;
-            text-shadow: 2px 2px 4px #000000;
-            text-align: center;
+            color: #FF00FF;
         }
-        h1 {
-            margin-bottom: 30px;
+        .fade-in-out {
+            position: absolute;
+            font-size: 48px;
+            opacity: 0;
+            animation: fadeInOut 12s infinite;
+            display: inline-block;
+            white-space: nowrap;
+        }
+        .alpha {
+            animation-delay: 4s;
+        }
+        .king {
+            animation-delay: 8s;
+        }
+        @keyframes fadeInOut {
+            0%, 33%, 100% { opacity: 0; }
+            10%, 23% { opacity: 1; }
+        }
+        .letter {
+            display: inline-block;
+            opacity: 0;
+            animation: appear 0.5s forwards;
+        }
+        @keyframes appear {
+            0% { opacity: 0; transform: scale(0.8) rotate(-10deg); }
+            100% { opacity: 1; transform: scale(1) rotate(0deg); }
+        }
+        .phone-number {
+            position: absolute;
+            bottom: 50px;
+            font-size: 36px;
+            color: #FF00FF;
+            animation: glow 3s infinite, changeFont 9s infinite;
+        }
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF, 0 0 20px #FF00FF; }
+            50% { text-shadow: 0 0 20px #FF00FF, 0 0 30px #FF00FF, 0 0 40px #FF00FF; }
+        }
+        @keyframes changeFont {
+            0%, 33% { font-family: 'Courgette', cursive; }
+            34%, 66% { font-family: 'Roboto Slab', serif; }
+            67%, 100% { font-family: 'Playfair Display', serif; }
         }
         .nav-buttons {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
+            position: absolute;
+            bottom: 100px;
         }
         .nav-buttons a {
             padding: 10px 20px;
@@ -38,15 +83,41 @@
             flex: 1 0 200px;
             text-align: center;
         }
+        .experimental-button {
+            background-color: rgba(255, 165, 0, 0.7); /* Orange color */
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
-    <h1>The Futuristic Enchantment of the Fairy</h1>
+    <div class="fade-in-out">
+        <span class="letter" style="animation-delay: 0s;">F</span>
+        <span class="letter" style="animation-delay: 0.1s;">a</span>
+        <span class="letter" style="animation-delay: 0.2s;">i</span>
+        <span class="letter" style="animation-delay: 0.3s;">r</span>
+        <span class="letter" style="animation-delay: 0.4s;">y</span>
+    </div>
+    <div class="fade-in-out alpha">
+        <span class="letter" style="animation-delay: 0s;">A</span>
+        <span class="letter" style="animation-delay: 0.1s;">l</span>
+        <span class="letter" style="animation-delay: 0.2s;">p</span>
+        <span class="letter" style="animation-delay: 0.3s;">h</span>
+        <span class="letter" style="animation-delay: 0.4s;">a</span>
+    </div>
+    <div class="fade-in-out king">
+        <span class="letter" style="animation-delay: 0s;">K</span>
+        <span class="letter" style="animation-delay: 0.1s;">i</span>
+        <span class="letter" style="animation-delay: 0.2s;">n</span>
+        <span class="letter" style="animation-delay: 0.3s;">g</span>
+    </div>
+
+    <div class="phone-number">405-618-1416</div>
     <div class="nav-buttons">
         <a href="digital-doctor-specialist.html">Digital Doctor Specialist</a>
         <a href="about-the-fairy-alpha-king.html">About the Fairy Alpha King</a>
         <a href="the-thread-wizard.html">The Thread Wizard</a>
         <a href="enchanted-links.html">Enchanted Links</a>
+        <a href="experimental-code.html" class="experimental-button">Experimental Code</a>
     </div>
 </body>
 </html>
