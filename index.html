@@ -22,8 +22,15 @@
             font-family: Arial, sans-serif;
             color: #FF00FF;
         }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            position: relative;
+        }
         .fade-in-out {
-            position: absolute;
             font-size: 48px;
             opacity: 0;
             animation: fadeInOut 12s infinite;
@@ -50,11 +57,10 @@
             100% { opacity: 1; transform: scale(1) rotate(0deg); }
         }
         .phone-number {
-            position: absolute;
-            bottom: 50px;
             font-size: 36px;
             color: #FF00FF;
             animation: glow 3s infinite, changeFont 9s infinite;
+            margin-top: 20px;
         }
         @keyframes glow {
             0%, 100% { text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF, 0 0 20px #FF00FF; }
@@ -70,8 +76,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
-            position: absolute;
-            bottom: 100px;
+            margin-top: 20px;
         }
         .nav-buttons a {
             padding: 10px 20px;
@@ -85,33 +90,42 @@
         }
         .experimental-button {
             background-color: rgba(255, 165, 0, 0.7); /* Orange color */
-            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .fade-in-out {
+                font-size: 36px;
+            }
+            .phone-number {
+                font-size: 28px;
+                position: relative;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="fade-in-out">
-        <span class="letter" style="animation-delay: 0s;">F</span>
-        <span class="letter" style="animation-delay: 0.1s;">a</span>
-        <span class="letter" style="animation-delay: 0.2s;">i</span>
-        <span class="letter" style="animation-delay: 0.3s;">r</span>
-        <span class="letter" style="animation-delay: 0.4s;">y</span>
+    <div class="content">
+        <div class="fade-in-out">
+            <span class="letter" style="animation-delay: 0s;">F</span>
+            <span class="letter" style="animation-delay: 0.1s;">a</span>
+            <span class="letter" style="animation-delay: 0.2s;">i</span>
+            <span class="letter" style="animation-delay: 0.3s;">r</span>
+            <span class="letter" style="animation-delay: 0.4s;">y</span>
+        </div>
+        <div class="fade-in-out alpha">
+            <span class="letter" style="animation-delay: 0s;">A</span>
+            <span class="letter" style="animation-delay: 0.1s;">l</span>
+            <span class="letter" style="animation-delay: 0.2s;">p</span>
+            <span class="letter" style="animation-delay: 0.3s;">h</span>
+            <span class="letter" style="animation-delay: 0.4s;">a</span>
+        </div>
+        <div class="fade-in-out king">
+            <span class="letter" style="animation-delay: 0s;">K</span>
+            <span class="letter" style="animation-delay: 0.1s;">i</span>
+            <span class="letter" style="animation-delay: 0.2s;">n</span>
+            <span class="letter" style="animation-delay: 0.3s;">g</span>
+        </div>
+        <div class="phone-number">405-618-1416</div>
     </div>
-    <div class="fade-in-out alpha">
-        <span class="letter" style="animation-delay: 0s;">A</span>
-        <span class="letter" style="animation-delay: 0.1s;">l</span>
-        <span class="letter" style="animation-delay: 0.2s;">p</span>
-        <span class="letter" style="animation-delay: 0.3s;">h</span>
-        <span class="letter" style="animation-delay: 0.4s;">a</span>
-    </div>
-    <div class="fade-in-out king">
-        <span class="letter" style="animation-delay: 0s;">K</span>
-        <span class="letter" style="animation-delay: 0.1s;">i</span>
-        <span class="letter" style="animation-delay: 0.2s;">n</span>
-        <span class="letter" style="animation-delay: 0.3s;">g</span>
-    </div>
-
-    <div class="phone-number">405-618-1416</div>
     <div class="nav-buttons">
         <a href="digital-doctor-specialist.html">Digital Doctor Specialist</a>
         <a href="about-the-fairy-alpha-king.html">About the Fairy Alpha King</a>
