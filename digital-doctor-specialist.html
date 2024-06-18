@@ -3,33 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Doctor Specialist</title>
+    <title>Digital Doctor Services</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        
         body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
             margin: 0;
-            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
         }
-        .back-button {
-            margin-top: 20px;
+        header, section {
+            background: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
-        .back-button a {
-            padding: 10px 20px;
-            background-color: #007BFF;
+        h1, h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .service-list, .pricing-list, .testimonial-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .service-list li, .pricing-list li, .testimonial-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-left: 5px solid #28a745;
+            border-radius: 4px;
+        }
+        .cta, .back-button a {
+            background: #28a745;
             color: white;
+            padding: 15px;
+            text-align: center;
+            display: block;
+            width: 200px;
+            margin: 20px auto;
             text-decoration: none;
             border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s, transform 0.3s;
+        }
+        .cta:hover, .back-button a:hover {
+            background: #218838;
+            transform: translateY(-2px);
+        }
+        .cta-form {
+            background: #007bff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            display: block;
+            width: 300px;
+            margin: 20px auto;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s, transform 0.3s;
+        }
+        .cta-form:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+        .back-button {
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <h1>Digital Doctor Specialist</h1>
-    <div class="back-button">
-        <a href="index.html">Back to Homepage</a>
-    </div>
+
+<header>
+    <h1>Digital Doctor Services</h1>
+    <p>Welcome to Digital Doctor Services, your one-stop solution for all digital device issues. With extensive expertise in computer repair, virus and malware removal, system optimization, and iPhone troubleshooting, we are dedicated to providing top-notch service to keep your devices running smoothly.</p>
+</header>
+
+<section>
+    <h2>Service Details</h2>
+    <ul class="service-list">
+        <li>Virus and malware removal</li>
+        <li>System optimization</li>
+        <li>Software installation and updates</li>
+        <li>Hardware diagnostics and repair</li>
+        <li>iPhone troubleshooting (muffled speakers, clogged charging ports, software bugs)</li>
+        <li>Walkthrough for iPhone backup, erasing, and restoring</li>
+        <li>Liquid damage advice: “If you have liquid damage, immediately turn the device off. If the device turns itself off, it is usually permanent.”</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Pricing</h2>
+    <ul class="pricing-list">
+        <li>Standard Computer Service: $75</li>
+        <li>iPhone Troubleshooting: $75</li>
+        <li>House Call Fee (within 10 miles): Included</li>
+        <li>House Call Fee (over 10 miles): $25 additional</li>
+    </ul>
+</section>
+
+<section>
+    <h2>House Call Information</h2>
+    <p>Benefit from the convenience of house calls and watch the repair process in the comfort of your home.</p>
+    <p><strong>Address:</strong> 1950 Northwest 16th Street, Oklahoma City, Oklahoma, 73106.</p>
+    <p>Service area includes Oklahoma City with an additional charge for locations over 10 miles away.</p>
+</section>
+
+<section>
+    <h2>iPhone Repair Drop-off Details</h2>
+    <p>For iPhone repairs that require drop-off, ensure you have a fast internet connection at your house for efficient repairs. Typical repair duration is 1-2 hours. It’s important to have an additional device for communication during the repair process. Follow the procedure for drop-off and pick-up as directed.</p>
+</section>
+
+<section>
+    <h2>Contact Information</h2>
+    <p>For scheduling and inquiries, please contact us at <a href="mailto:youremail@example.com">youremail@example.com</a> or call us at <a href="tel:yourphonenumber">your phone number</a>.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeIJCjsxQXrhEO5VkIH_7QnuMWx2Y5PgZ0otWOJfO-ZXClpEw/viewform?usp=sf_link" class="cta-form">Fill Out Our Online Form</a>
+</section>
+
+<section>
+    <h2>Testimonials and Reviews</h2>
+    <ul class="testimonial-list">
+        <li>“The Digital Doctor saved my computer from a nasty virus. Fast and reliable service!” - Jane D.</li>
+        <li>“I had no idea what was wrong with my iPhone, but they fixed it quickly. Highly recommend!” - Mike P.</li>
+        <!-- Add more testimonials as needed -->
+    </ul>
+</section>
+
+<section>
+    <h2>Call to Action</h2>
+    <p>Ready to get your devices running smoothly? Contact us today to schedule an appointment.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeIJCjsxQXrhEO5VkIH_7QnuMWx2Y5PgZ0otWOJfO-ZXClpEw/viewform?usp=sf_link" class="cta">Schedule an Appointment</a>
+</section>
+
+<div class="back-button">
+    <a href="index.html">Back to Homepage</a>
+</div>
+
 </body>
 </html>
