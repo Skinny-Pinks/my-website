@@ -5,21 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Break the Silence</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
+            background-color: #000000;
+            color: #FF00FF;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
             margin: 0;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .container {
+        h1 {
+            margin-bottom: 40px;
+            font-size: 36px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .content {
             max-width: 800px;
-            margin: auto;
             background: #fff;
+            color: #333;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: left;
+            animation: fadeIn 1s ease-in-out;
         }
         .highlight {
             color: #e74c3c;
@@ -28,21 +40,42 @@
         .emphasis {
             font-style: italic;
         }
-        h1, h2 {
-            text-align: center;
-            color: #2980b9;
-        }
         blockquote {
             margin: 20px 0;
             padding: 10px 20px;
             background: #ecf0f1;
             border-left: 5px solid #3498db;
         }
+        .back-button {
+            margin-top: 40px;
+        }
+        .back-button a {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #28a745, #85d7b1);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s, transform 0.3s;
+            animation: buttonAnimation 1s forwards;
+        }
+        .back-button a:hover {
+            background: linear-gradient(135deg, #218838, #6fbf8f);
+            transform: translateY(-2px) rotate(-3deg);
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes buttonAnimation {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Break the Silence</h1>
+    <h1>Break the Silence</h1>
+    <div class="content">
         <p>I hate it when people try to <span class="highlight">censor</span> me, and I’m very sensitive to it. Anytime someone tries to guide me into a certain way of speaking, I call them out by asking <span class="highlight">logical questions</span> that lead to my inevitable assertion of my right to speak freely.</p>
         
         <blockquote>
@@ -60,6 +93,9 @@
         </blockquote>
         
         <p>Because people don’t speak of it, they’re spoken of harshly. That is the wound. That is the infection.</p>
+    </div>
+    <div class="back-button">
+        <a href="index.html">Back to Homepage</a>
     </div>
 </body>
 </html>
