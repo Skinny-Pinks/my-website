@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About John-Paul McCreary</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-        
         body {
             margin: 0;
             padding: 0;
@@ -38,7 +37,6 @@
             line-height: 1.6;
             margin-bottom: 20px;
             white-space: pre-wrap;
-            overflow: hidden;
             opacity: 0;
             animation: textFadeIn 1s forwards;
         }
@@ -80,7 +78,7 @@
 <body>
     <div class="bio-container">
         <h1>About John-Paul McCreary</h1>
-        <p id="bio-text"></p>
+        <div id="bio-text"></div>
         <div class="back-button">
             <a href="index.html">Back to Homepage</a>
         </div>
@@ -106,19 +104,15 @@ Explore my world and connect with me through the essential links below. Whether 
             const bioContainer = document.getElementById("bio-text");
             const paragraphs = bioText.split('\n\n'); // Split the text into paragraphs
 
-            function displayText() {
-                paragraphs.forEach((paragraph, index) => {
-                    setTimeout(() => {
-                        const p = document.createElement('p');
-                        p.textContent = paragraph;
-                        p.style.animationDelay = `${index * 0.5}s`; // Stagger the animation delay for each paragraph
-                        p.style.animation = 'textFadeIn 1s forwards';
-                        bioContainer.appendChild(p);
-                    }, index * 1000); // Display each paragraph with a 1-second interval
-                });
-            }
-
-            displayText();
+            paragraphs.forEach((paragraph, index) => {
+                setTimeout(() => {
+                    const p = document.createElement('p');
+                    p.textContent = paragraph;
+                    p.style.animationDelay = `${index * 0.5}s`; // Stagger the animation delay for each paragraph
+                    p.style.animation = 'textFadeIn 1s forwards';
+                    bioContainer.appendChild(p);
+                }, index * 1000); // Display each paragraph with a 1-second interval
+            });
         });
     </script>
 </body>
