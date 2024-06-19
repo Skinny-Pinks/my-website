@@ -18,6 +18,11 @@
             flex-direction: column;
             align-items: center;
         }
+        h1 {
+            margin-bottom: 40px;
+            font-size: 36px;
+            animation: fadeIn 1s ease-in-out;
+        }
         .link-box {
             display: inline-block;
             width: 250px;
@@ -27,6 +32,7 @@
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            animation: fadeIn 1s ease-in-out;
         }
         .link-box img {
             width: 100%;
@@ -53,16 +59,25 @@
         }
         .back-button a {
             padding: 10px 20px;
-            background-color: #28a745;
+            background: linear-gradient(135deg, #28a745, #85d7b1);
             color: white;
             text-decoration: none;
             border-radius: 5px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
             transition: background 0.3s, transform 0.3s;
+            animation: buttonAnimation 1s forwards;
         }
         .back-button a:hover {
-            background-color: #218838;
-            transform: translateY(-2px);
+            background: linear-gradient(135deg, #218838, #6fbf8f);
+            transform: translateY(-2px) rotate(-3deg);
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes buttonAnimation {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
