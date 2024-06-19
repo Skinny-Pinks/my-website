@@ -31,7 +31,9 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             text-align: left;
-            animation: fadeIn 1s ease-in-out;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
         .highlight {
             color: #e74c3c;
@@ -71,6 +73,10 @@
             0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
         }
+        .slide-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
     </style>
 </head>
 <body>
@@ -97,5 +103,25 @@
     <div class="back-button">
         <a href="index.html">Back to Homepage</a>
     </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const contents = document.querySelectorAll('.content');
+            const options = {
+                threshold: 0.1
+            };
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('slide-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+            contents.forEach(content => {
+                observer.observe(content);
+            });
+        });
+    </script>
 </body>
 </html>
