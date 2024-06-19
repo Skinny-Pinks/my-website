@@ -14,32 +14,31 @@
             color: #333;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             min-height: 100vh;
-            overflow: hidden;
-            perspective: 1000px;
+            overflow-x: hidden;
         }
         .bio-container {
             background: rgba(255, 255, 255, 0.9);
             border-radius: 20px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
             max-width: 800px;
+            width: 90%;
             margin: 20px;
-            padding: 40px;
+            padding: 20px;
             text-align: center;
             animation: fadeIn 2s ease-in-out, rotateIn 2s ease-in-out;
-            transform: rotateY(0deg);
         }
         .bio-container h1 {
             font-family: 'Pacifico', cursive;
             color: #FF00FF;
-            font-size: 48px;
+            font-size: 36px;
             margin-bottom: 20px;
             animation: colorChange 5s infinite alternate;
         }
         .bio-container p {
-            font-size: 18px;
-            line-height: 1.8;
+            font-size: 16px;
+            line-height: 1.6;
             margin-bottom: 20px;
             white-space: pre-wrap;
             opacity: 0;
@@ -51,14 +50,14 @@
         }
         .back-button {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 20px;
         }
         .back-button a {
             background: linear-gradient(135deg, #28a745, #85d7b1);
             color: white;
             padding: 15px;
             display: inline-block;
-            width: 220px;
+            width: 200px;
             margin: 20px auto;
             text-decoration: none;
             border-radius: 25px;
