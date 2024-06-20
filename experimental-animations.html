@@ -73,8 +73,11 @@
             0% {
                 background: #0000FF;
             }
-            50% {
+            33% {
                 background: #FF00FF;
+            }
+            66% {
+                background: #00FF00;
             }
             100% {
                 background: #0000FF;
@@ -108,7 +111,7 @@
             animation: rotate 1s infinite;
         }
         .home-button {
-            background: linear-gradient(135deg, #28a745, #85d7b1);
+            background: linear-gradient(135deg, #0000FF, #00FF00, #FF00FF);
             color: white;
             padding: 10px 20px;
             border: none;
@@ -116,6 +119,7 @@
             cursor: pointer;
             margin-top: 40px;
             width: 200px;
+            animation: pulse 2s infinite, rotate 3s infinite, shake 3s infinite, colorShift 5s infinite, glow 2s infinite;
         }
         .home-button a {
             color: white;
