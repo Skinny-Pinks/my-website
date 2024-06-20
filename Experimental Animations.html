@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experimental Animations</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            background-color: #000000;
+            color: #FF00FF;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            margin-bottom: 40px;
+            font-size: 36px;
+            color: #FF00FF;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            width: 200px;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 5px rgba(0, 0, 255, 0.8), 0 0 10px rgba(255, 0, 255, 0.8);
+            }
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 20px rgba(0, 0, 255, 1), 0 0 25px rgba(255, 0, 255, 1);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 5px rgba(0, 0, 255, 0.8), 0 0 10px rgba(255, 0, 255, 0.8);
+            }
+        }
+        .pulse-button {
+            background: linear-gradient(135deg, #0000FF, #FF00FF);
+            animation: pulse 1s infinite;
+        }
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 5px #0000FF, 0 0 10px #0000FF, 0 0 15px #0000FF;
+            }
+            50% {
+                box-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF, 0 0 15px #FF00FF;
+            }
+            100% {
+                box-shadow: 0 0 5px #0000FF, 0 0 10px #0000FF, 0 0 15px #0000FF;
+            }
+        }
+        .glow-button {
+            background: #0000FF;
+            animation: glow 1s infinite;
+        }
+        @keyframes colorShift {
+            0% {
+                background: #0000FF;
+            }
+            50% {
+                background: #FF00FF;
+            }
+            100% {
+                background: #0000FF;
+            }
+        }
+        .color-shift-button {
+            background: #0000FF;
+            animation: colorShift 1s infinite;
+        }
+        @keyframes shake {
+            0% { transform: translate(0, 0); }
+            20% { transform: translate(-5px, 0); }
+            40% { transform: translate(5px, 0); }
+            60% { transform: translate(-5px, 0); }
+            80% { transform: translate(5px, 0); }
+            100% { transform: translate(0, 0); }
+        }
+        .shake-button {
+            background: linear-gradient(135deg, #0000FF, #FF00FF);
+            animation: shake 1s infinite;
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(5deg); }
+            100% { transform: rotate(0deg); }
+        }
+        .rotate-button {
+            background: linear-gradient(135deg, #0000FF, #FF00FF);
+            animation: rotate 1s infinite;
+        }
+    </style>
+</head>
+<body>
+    <h1>Experimental Animations</h1>
+    <div class="button-container">
+        <button class="pulse-button" onclick="changeDuration(this)">Pulse Animation</button>
+        <button class="glow-button" onclick="changeDuration(this)">Glow Animation</button>
+        <button class="color-shift-button" onclick="changeDuration(this)">Color Shift Animation</button>
+        <button class="shake-button" onclick="changeDuration(this)">Shake Animation</button>
+        <button class="rotate-button" onclick="changeDuration(this)">Rotate Animation</button>
+    </div>
+
+    <script>
+        function changeDuration(button) {
+            const currentDuration = button.style.animationDuration || '1s';
+            let newDuration;
+
+            if (currentDuration === '1s') {
+                newDuration = '2s';
+            } else if (currentDuration === '2s') {
+                newDuration = '3s';
+            } else {
+                newDuration = '1s';
+            }
+
+            button.style.animationDuration = newDuration;
+        }
+    </script>
+</body>
+</html>
