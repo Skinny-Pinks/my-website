@@ -8,7 +8,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
         body {
-            background-color: #000000;
+            background: url('https://raw.githubusercontent.com/Skinny-Pinks/my-website/main/A_dark_background_with_an_abstract_neon_lights_the.png') no-repeat center center fixed;
+            background-size: cover;
             color: #FF00FF;
             font-family: 'Roboto', sans-serif;
             text-align: center;
@@ -17,17 +18,33 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            animation: zoomBackground 60s infinite;
         }
+
+        @keyframes zoomBackground {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
         h1 {
             margin-bottom: 40px;
             font-size: 36px;
             color: #FF00FF;
         }
+        
         .button-container {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
+
         button {
             padding: 10px 20px;
             border: none;
@@ -35,7 +52,9 @@
             cursor: pointer;
             color: white;
             width: 200px;
+            opacity: 0.8; /* Set opacity for semi-transparency */
         }
+
         @keyframes pulse {
             0% {
                 transform: scale(1);
@@ -50,10 +69,12 @@
                 box-shadow: 0 0 5px rgba(0, 0, 255, 0.8), 0 0 10px rgba(255, 0, 255, 0.8);
             }
         }
+
         .pulse-button {
             background: linear-gradient(135deg, #0000FF, #FF00FF);
             animation: pulse 1s infinite;
         }
+
         @keyframes glow {
             0% {
                 box-shadow: 0 0 5px #0000FF, 0 0 10px #0000FF, 0 0 15px #0000FF;
@@ -65,10 +86,12 @@
                 box-shadow: 0 0 5px #0000FF, 0 0 10px #0000FF, 0 0 15px #0000FF;
             }
         }
+
         .glow-button {
             background: #0000FF;
             animation: glow 1s infinite;
         }
+
         @keyframes colorShift {
             0% {
                 background: #0000FF;
@@ -83,10 +106,12 @@
                 background: #0000FF;
             }
         }
+
         .color-shift-button {
             background: #0000FF;
             animation: colorShift 1s infinite;
         }
+
         @keyframes shake {
             0% { transform: translate(0, 0); }
             20% { transform: translate(-5px, 0); }
@@ -95,10 +120,12 @@
             80% { transform: translate(5px, 0); }
             100% { transform: translate(0, 0); }
         }
+
         .shake-button {
             background: linear-gradient(135deg, #0000FF, #FF00FF);
             animation: shake 1s infinite;
         }
+
         @keyframes rotate {
             0% { transform: rotate(0deg); }
             25% { transform: rotate(-5deg); }
@@ -106,10 +133,12 @@
             75% { transform: rotate(5deg); }
             100% { transform: rotate(0deg); }
         }
+
         .rotate-button {
             background: linear-gradient(135deg, #0000FF, #FF00FF);
             animation: rotate 1s infinite;
         }
+
         .home-button {
             background: linear-gradient(135deg, #0000FF, #00FF00, #FF00FF);
             color: white;
@@ -122,6 +151,7 @@
             opacity: 0.8; /* Set opacity for semi-transparency */
             animation: pulse 2s infinite, rotate 3s infinite, shake 3s infinite, colorShift 5s infinite, glow 2s infinite;
         }
+
         .home-button a {
             color: white;
             text-decoration: none;
