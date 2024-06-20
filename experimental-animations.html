@@ -139,6 +139,18 @@
             animation: rotate 1s infinite;
         }
 
+        .unique-button {
+            background: linear-gradient(135deg, #0000FF, #00FF00, #FF00FF);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 200px;
+            opacity: 0.8; /* Set opacity for semi-transparency */
+            animation: pulse 2s infinite, glow 2s infinite, colorShift 5s infinite, shake 3s infinite, rotate 3s infinite;
+        }
+
         .home-button {
             background: linear-gradient(135deg, #0000FF, #00FF00, #FF00FF);
             color: white;
@@ -152,7 +164,7 @@
             animation: pulse 2s infinite, rotate 3s infinite, shake 3s infinite, colorShift 5s infinite, glow 2s infinite;
         }
 
-        .home-button a {
+        .home-button a, .unique-button a {
             color: white;
             text-decoration: none;
         }
@@ -166,6 +178,7 @@
         <button class="color-shift-button" onclick="changeDuration(this)">Color Shift Animation</button>
         <button class="shake-button" onclick="changeDuration(this)">Shake Animation</button>
         <button class="rotate-button" onclick="changeDuration(this)">Rotate Animation</button>
+        <button class="unique-button" onclick="changeDuration(this)">Unique Animation</button>
     </div>
 
     <button class="home-button">
