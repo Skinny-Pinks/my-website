@@ -130,4 +130,39 @@
     <div class="content">
         <div class="canvas-container">
             <canvas></canvas>
-        </
+        </div>
+        <blockquote>
+            <p class="emphasis">You have to talk about the things they don’t want to talk about, the things they’ve not allowed to be talked about, to take away its power. Silence gives it power.</p>
+        </blockquote>
+    </div>
+    
+    <div class="content">
+        <div class="canvas-container">
+            <canvas></canvas>
+        </div>
+        <p>Because people don’t speak of it, they’re spoken of harshly. That is the wound. That is the infection.</p>
+    </div>
+    
+    <div class="back-button">
+        <a href="index.html">Back to Homepage</a>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvasContainers = document.querySelectorAll('.canvas-container');
+
+            canvasContainers.forEach(container => {
+                const canvas = container.querySelector('canvas');
+                const ctx = canvas.getContext('2d');
+                const rect = container.getBoundingClientRect();
+                canvas.width = rect.width;
+                canvas.height = rect.height;
+
+                // Fill the canvas with a solid color
+                ctx.fillStyle = '#333';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                let isDrawing = false;
+
+                const getPointerPos = (e) => {
+                    const rect
