@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Break the Silence</title>
+    <title>Experimental Animations</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
@@ -21,180 +21,119 @@
         h1 {
             margin-bottom: 40px;
             font-size: 36px;
-            animation: fadeIn 1s ease-in-out;
+            color: #FF00FF;
         }
-        .content {
-            max-width: 800px;
-            background: #fff;
-            color: #333;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            text-align: left;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 20px;
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
-        .highlight {
-            color: #e74c3c;
-            font-weight: bold;
-        }
-        .emphasis {
-            font-style: italic;
-        }
-        blockquote {
-            margin: 20px 0;
+        button {
             padding: 10px 20px;
-            background: #ecf0f1;
-            border-left: 5px solid #3498db;
-        }
-        .back-button {
-            margin-top: 40px;
-        }
-        .back-button a {
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #28a745, #85d7b1);
-            color: white;
-            text-decoration: none;
+            border: none;
             border-radius: 5px;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-            transition: background 0.3s, transform 0.3s;
-            animation: buttonAnimation 1s forwards;
+            cursor: pointer;
+            color: white;
+            width: 200px;
         }
-        .back-button a:hover {
-            background: linear-gradient(135deg, #218838, #6fbf8f);
-            transform: translateY(-2px) rotate(-3deg);
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 5px rgba(0, 0, 255, 0.8), 0 0 10px rgba(255, 0, 255, 0.8);
+            }
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 20px rgba(0, 0, 255, 1), 0 0 25px rgba(255, 0, 255, 1);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 5px rgba(0, 0, 255, 0.8), 0 0 10px rgba(255, 0, 255, 0.8);
+            }
         }
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+        .pulse-button {
+            background: linear-gradient(135deg, #0000FF, #FF00FF);
+            animation: pulse 1s infinite;
         }
-        @keyframes buttonAnimation {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 5px #0000FF, 0 0 10px #0000FF, 0 0 15px #0000FF;
+            }
+            50% {
+                box-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF, 0 0 15px #FF00FF;
+            }
+            100% {
+                box-shadow: 0 0 5px #0000FF, 0 0 10px #0000FF, 0 0 15px #0000FF;
+            }
         }
-        .scratch-card {
-            position: relative;
-            width: 100%;
-            height: 100%;
+        .glow-button {
+            background: #0000FF;
+            animation: glow 1s infinite;
         }
-        .canvas-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 2;
+        @keyframes colorShift {
+            0% {
+                background: #0000FF;
+            }
+            50% {
+                background: #FF00FF;
+            }
+            100% {
+                background: #0000FF;
+            }
+        }
+        .color-shift-button {
+            background: #0000FF;
+            animation: colorShift 1s infinite;
+        }
+        @keyframes shake {
+            0% { transform: translate(0, 0); }
+            20% { transform: translate(-5px, 0); }
+            40% { transform: translate(5px, 0); }
+            60% { transform: translate(-5px, 0); }
+            80% { transform: translate(5px, 0); }
+            100% { transform: translate(0, 0); }
+        }
+        .shake-button {
+            background: linear-gradient(135deg, #0000FF, #FF00FF);
+            animation: shake 1s infinite;
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(5deg); }
+            100% { transform: rotate(0deg); }
+        }
+        .rotate-button {
+            background: linear-gradient(135deg, #0000FF, #FF00FF);
+            animation: rotate 1s infinite;
         }
     </style>
-    <!-- Include ScratchCard.js from CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/scratchcard-js/dist/scratchcard.min.js"></script>
 </head>
 <body>
-    <h1>Break the Silence</h1>
-    <div class="content">
-        <div class="scratch-card" id="scratch-card-1">
-            <div class="canvas-container">
-                <canvas></canvas>
-            </div>
-        </div>
-        <p>I hate it when people try to <span class="highlight">censor</span> me, and I’m very sensitive to it. Anytime someone tries to guide me into a certain way of speaking, I call them out by asking <span class="highlight">logical questions</span> that lead to my inevitable assertion of my right to speak freely.</p>
+    <h1>Experimental Animations</h1>
+    <div class="button-container">
+        <button class="pulse-button" onclick="changeDuration(this)">Pulse Animation</button>
+        <button class="glow-button" onclick="changeDuration(this)">Glow Animation</button>
+        <button class="color-shift-button" onclick="changeDuration(this)">Color Shift Animation</button>
+        <button class="shake-button" onclick="changeDuration(this)">Shake Animation</button>
+        <button class="rotate-button" onclick="changeDuration(this)">Rotate Animation</button>
     </div>
-    
-    <div class="content">
-        <div class="scratch-card" id="scratch-card-2">
-            <div class="canvas-container">
-                <canvas></canvas>
-            </div>
-        </div>
-        <blockquote>
-            <p>Most of the time, when people are censoring you, it’s because you’re over a target—something that’s soft and sore, like a bruised spot, something sensitive that needs to be discussed but hasn’t been because of the silence, the silence that shouldn’t be.</p>
-        </blockquote>
-    </div>
-    
-    <div class="content">
-        <div class="scratch-card" id="scratch-card-3">
-            <div class="canvas-container">
-                <canvas></canvas>
-            </div>
-        </div>
-        <p>People have been getting away with silencing this person so much that it’s morphed into their very nature. They continue the silence by silencing others, but we’re going to <span class="highlight">break the silence</span>. We’re going to talk about what they don’t want to talk about, to desensitize it, and free them from the bond they’ve been under.</p>
-    </div>
-    
-    <div class="content">
-        <div class="scratch-card" id="scratch-card-4">
-            <div class="canvas-container">
-                <canvas></canvas>
-            </div>
-        </div>
-        <h2>Shedding Light on Darkness</h2>
-    </div>
-    
-    <div class="content">
-        <div class="scratch-card" id="scratch-card-5">
-            <div class="canvas-container">
-                <canvas></canvas>
-            </div>
-        </div>
-        <p>We’ll shed light on the darkness, and in doing so, we’ll free them from their bonds. We should all be very sensitive to darkness, because only the light of <span class="highlight">free speech</span> should remain. In other words, we’ve got to clean up a wound before it will heal.</p>
-    </div>
-    
-    <div class="content">
-        <div class="scratch-card" id="scratch-card-6">
-            <div class="canvas-container">
-                <canvas></canvas>
-            </div>
-        </div>
-        <blockquote>
-            <p class="emphasis">You have to talk about the things they don’t want to talk about, the things they’ve not allowed to be talked about, to take away its power. Silence gives it power.</p>
-        </blockquote>
-    </div>
-    
-    <div class="content">
-        <div class="scratch-card" id="scratch-card-7">
-            <div class="canvas-container">
-                <canvas></canvas>
-            </div>
-        </div>
-        <p>Because people don’t speak of it, they’re spoken of harshly. That is the wound. That is the infection.</p>
-    </div>
-    
-    <div class="back-button">
-        <a href="index.html">Back to Homepage</a>
-    </div>
-    
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const options = {
-                scratchType: ScratchCard.SCRATCH_TYPE.SPRAY,
-                containerWidth: 800,
-                containerHeight: 200,
-                imageForwardSrc: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAW0lEQVR42mNkQAOeMfgHg1E7mQhBmDqQhg7NTAeIRkDzqxHBgboL2AhAGbALBL+AawWQK8C9AY1CVwLsgizAkwHYEC7QdItwCQ5sAwq3ICSwGSJtCuBMsAgDQ0Uozna4SoAAAAASUVORK5CYII=',
-                htmlBackground: '',
-                clearZoneRadius: 30,
-                nPoints: 50,
-                pointSize: 4,
-                callback: function () {
-                    console.log('Scratch card is cleared!');
-                }
-            };
-            
-            const scratchCards = [
-                new ScratchCard('#scratch-card-1', options),
-                new ScratchCard('#scratch-card-2', options),
-                new ScratchCard('#scratch-card-3', options),
-                new ScratchCard('#scratch-card-4', options),
-                new ScratchCard('#scratch-card-5', options),
-                new ScratchCard('#scratch-card-6', options),
-                new ScratchCard('#scratch-card-7', options),
-            ];
-            
-            scratchCards.forEach(card => card.init().then(() => {
-                console.log('Scratch card ready');
-            }).catch(error => {
-                console.error(error);
-            }));
-        });
+        function changeDuration(button) {
+            const currentDuration = button.style.animationDuration || '1s';
+            let newDuration;
+
+            if (currentDuration === '1s') {
+                newDuration = '2s';
+            } else if (currentDuration === '2s') {
+                newDuration = '3s';
+            } else {
+                newDuration = '1s';
+            }
+
+            button.style.animationDuration = newDuration;
+        }
     </script>
 </body>
 </html>
