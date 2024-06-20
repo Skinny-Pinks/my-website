@@ -107,6 +107,20 @@
             background: linear-gradient(135deg, #0000FF, #FF00FF);
             animation: rotate 1s infinite;
         }
+        .home-button {
+            background: linear-gradient(135deg, #28a745, #85d7b1);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 40px;
+            width: 200px;
+        }
+        .home-button a {
+            color: white;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -118,6 +132,10 @@
         <button class="shake-button" onclick="changeDuration(this)">Shake Animation</button>
         <button class="rotate-button" onclick="changeDuration(this)">Rotate Animation</button>
     </div>
+
+    <button class="home-button">
+        <a href="index.html">Home</a>
+    </button>
 
     <script>
         function changeDuration(button) {
