@@ -44,6 +44,27 @@
             color: #ff0000;
             text-decoration: line-through;
         }
+        .list-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .list {
+            text-align: left;
+        }
+        .list h3 {
+            font-size: 3.5vw;
+            color: #000;
+            text-decoration: underline;
+        }
+        .list ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 3vw;
+        }
+        .list ul li {
+            margin: 10px 0;
+        }
         .fly {
             position: absolute;
             font-size: 4vw;
@@ -66,7 +87,7 @@
                 box-shadow: none;
                 border: none;
             }
-            .sign h2, .sign p {
+            .sign h2, .sign p, .list h3, .list ul {
                 font-size: 24pt;
             }
             .sign .emoji {
@@ -81,11 +102,27 @@
 <body>
 
 <div class="sign">
-    <div class="emoji">🗑️</div>
-    <h2>Please dispose of non-food items here.</h2>
-    <p>No food waste in this trash can.</p>
-    <div class="emoji no">🚫🍗</div>
-    <p><strong>Thank you!</strong></p>
+    <h2>Dispose of Non-Food Items Only</h2>
+    <p>Please do not throw away food waste.</p>
+    <div class="list-container">
+        <div class="list">
+            <h3>Accepted:</h3>
+            <ul>
+                <li>📰 Paper</li>
+                <li>🛍️ Plastic</li>
+                <li>🪙 Metal</li>
+            </ul>
+        </div>
+        <div class="list">
+            <h3>Not Accepted:</h3>
+            <ul>
+                <li>🍗 Food Scraps</li>
+                <li>💧 Liquids</li>
+                <li>☣️ Hazardous Materials</li>
+            </ul>
+        </div>
+    </div>
+    <p>Help us keep our environment clean by disposing of non-food items only.</p>
     <div class="fly fly1">🪰</div>
     <div class="fly fly2">🪰</div>
     <div class="fly fly3">🪰</div>
