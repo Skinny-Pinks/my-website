@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trash Can Area</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .sign {
+            border: 3px solid #ff0000;
+            background-color: #fff;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            width: 100%;
+            max-width: 1000px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            page-break-after: always;
+        }
+        .sign h2 {
+            color: #ff0000;
+            font-size: 4vw;
+            margin-bottom: 20px;
+        }
+        .sign p {
+            font-size: 3vw;
+            margin: 15px 0;
+        }
+        .sign .emoji {
+            font-size: 10vw;
+            display: inline-block;
+            margin: 20px;
+        }
+        .sign .no {
+            color: #ff0000;
+            text-decoration: line-through;
+        }
+        @media print {
+            body {
+                height: auto;
+            }
+            .sign {
+                max-width: 100%;
+                width: 100%;
+                padding: 10px;
+                box-shadow: none;
+                border: none;
+            }
+            .sign h2, .sign p {
+                font-size: 24pt;
+            }
+            .sign .emoji {
+                font-size: 72pt;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="sign">
+    <div class="emoji">🗑️</div>
+    <h2>Please dispose of non-food items here.</h2>
+    <p>No food waste in this trash can.</p>
+    <div class="emoji no">🚫🍗</div>
+    <p><strong>Thank you!</strong></p>
+</div>
+
+</body>
+</html>
