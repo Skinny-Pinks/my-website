@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background: linear-gradient(to bottom right, #f0f0f0, #ffffff);
+            background-color: #f0f0f0;
         }
         .container {
             max-width: 800px;
@@ -17,71 +17,64 @@
             background: #fff;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
         }
         h1 {
             color: #333;
             text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            position: relative;
-        }
-        h1::after {
-            content: '';
-            width: 50px;
-            height: 5px;
-            background: #007BFF;
-            display: block;
-            margin: 10px auto;
-            border-radius: 5px;
         }
         ul {
             list-style-type: none;
             padding: 0;
         }
         li {
-            margin: 20px 0;
-            display: flex;
-            align-items: center;
+            margin: 10px 0;
         }
         a {
             text-decoration: none;
             color: #007BFF;
             font-size: 18px;
-            margin-left: 10px;
-            transition: color 0.3s, transform 0.3s;
         }
         a:hover {
-            color: #0056b3;
-            transform: scale(1.05);
+            text-decoration: underline;
         }
-        .icon {
-            font-size: 24px;
-            color: #007BFF;
-        }
-        .description {
-            margin-left: 34px;
-            color: #666;
-        }
-        .button-container {
+        .form-link {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 20px;
         }
         .button {
-            background: #007BFF;
-            color: #fff;
+            background-color: #ff0000;
+            color: white;
             border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
+            padding: 15px 30px;
+            font-size: 18px;
             cursor: pointer;
-            transition: background 0.3s;
+            border-radius: 5px;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .button:hover {
-            background: #0056b3;
+        .button:active {
+            transform: scale(0.95);
+            box-shadow: 0 5px #666;
+        }
+        .button:disabled {
+            background-color: #aaa;
+            cursor: not-allowed;
+        }
+        .button.broken {
+            background-color: #aaa;
+        }
+        .button.broken:after {
+            content: ' (Broken)';
+            color: #ff0000;
+            font-size: 0.8em;
+        }
+        .button.broken:hover {
+            background-color: #aaa;
+        }
+        .button.broken:active {
+            transform: translateX(10px) translateY(-10px);
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
 
@@ -89,18 +82,29 @@
     <h1>Caregiver Command Center</h1>
     <ul>
         <li>
-            <i class="fas fa-trash-alt icon"></i>
             <a href="https://skinny-pinks.github.io/my-website/Trash_Can_Area.html">Trash Can Area</a>
-            <p class="description">Instructions and signs for proper trash disposal.</p>
+            <p>Instructions and signs for proper trash disposal.</p>
         </li>
         <li>
-            <i class="fas fa-sink icon"></i>
             <a href="https://skinny-pinks.github.io/my-website/Home_Signs_Collection.html">Kitchen Sink Maintenance</a>
-            <p class="description">Guidelines and signs for maintaining the kitchen sink area.</p>
+            <p>Guidelines and signs for maintaining the kitchen sink area.</p>
+        </li>
+        <li>
+            <a href="https://skinny-pinks.github.io/my-website/General_Housekeeping.html">General Housekeeping</a>
+            <p>Instructions and signs for keeping the home tidy.</p>
+        </li>
+        <li>
+            <a href="https://skinny-pinks.github.io/my-website/Bathroom_Area.html">Bathroom Area</a>
+            <p>Instructions and signs for keeping the bathroom clean.</p>
+        </li>
+        <li>
+            <a href="https://skinny-pinks.github.io/my-website/Entryway_Mudroom.html">Entryway/Mudroom</a>
+            <p>Instructions and signs for the entryway/mudroom area.</p>
         </li>
     </ul>
-    <div class="button-container">
-        <button class="button">Explore More</button>
+    <div class="form-link">
+        <p>To report completed tasks, fill out the form below:</p>
+        <button class="button broken" disabled>Caregiver Task Completion Form</button>
     </div>
 </div>
 
