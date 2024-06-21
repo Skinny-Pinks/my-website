@@ -21,27 +21,44 @@
             text-align: center;
             width: 100%;
             max-width: 1000px;
-            height: auto;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             page-break-after: always;
         }
         .sign h2 {
             color: #ff0000;
-            font-size: 32px;
+            font-size: 4vw;
             margin-bottom: 20px;
         }
         .sign p {
-            font-size: 24px;
+            font-size: 3vw;
             margin: 15px 0;
         }
         .sign .emoji {
-            font-size: 120px;
+            font-size: 10vw;
             display: inline-block;
             margin: 20px;
         }
         .sign .no {
             color: #ff0000;
             text-decoration: line-through;
+        }
+        @media print {
+            body {
+                height: auto;
+            }
+            .sign {
+                max-width: 100%;
+                width: 100%;
+                padding: 10px;
+                box-shadow: none;
+                border: none;
+            }
+            .sign h2, .sign p {
+                font-size: 24pt;
+            }
+            .sign .emoji {
+                font-size: 72pt;
+            }
         }
     </style>
 </head>
