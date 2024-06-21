@@ -5,34 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trash Can Area</title>
     <style>
-        /* ... (all original styles remain unchanged) ... */
-
-        .back-button-container {
-            position: fixed;
-            bottom: 20px;
-            left: 0;
-            width: 100%;
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom right, #fdfd96, #fffacd);
+            margin: 0;
+        }
+        .sign {
+            position: relative;
+            border: 5px solid #ff0000;
+            background-color: #fff;
+            padding: 30px;
+            font-family: Arial, sans-serif;
             text-align: center;
-            z-index: 1000;
+            width: 100%;
+            max-width: 1000px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            page-break-after: always;
         }
-
-        .back-button {
-            background-color: #ff0000;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
+        .sign h2 {
+            color: #ff0000;
+            font-size: 6vw;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px #aaa;
+            background: linear-gradient(to right, #ff6666, #ff0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-
-        .back-button:hover {
-            background-color: #cc0000;
+        .sign p {
+            font-size: 3.5vw;
+            margin: 15px 0;
         }
-
+        .sign .emoji {
+            font-size: 12vw;
+            display: inline-block;
+            margin: 20px;
+        }
+        .sign .no {
+            color: #ff0000;
+            text-decoration: line-through;
+        }
+        .list-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .list {
+            text-align: left;
+        }
+        .list h3 {
+            font-size: 3.5vw;
+            color: #000;
+            text-decoration: underline;
+        }
+        .list ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 3vw;
+        }
+        .list ul li {
+            margin: 10px 0;
+        }
+        .fly {
+            position: absolute;
+            font-size: 4vw;
+        }
+        .fly1 { top: 5%; left: 10%; transform: rotate(10deg); }
+        .fly2 { top: 15%; right: 15%; transform: rotate(-15deg); }
+        .fly3 { bottom: 10%; left: 20%; transform: rotate(20deg); }
+        .fly4 { bottom: 5%; right: 20%; transform: rotate(-5deg); }
+        .fly5 { top: 10%; right: 40%; transform: rotate(30deg); }
+        .fly6 { bottom: 20%; left: 5%; transform: rotate(15deg); }
+        .fly7 { top: 20%; right: 5%; transform: rotate(-10deg); }
         @media print {
-            .back-button-container {
-                display: none;
+            body {
+                height: auto;
+            }
+            .sign {
+                max-width: 100%;
+                width: 100%;
+                padding: 20px;
+                box-shadow: none;
+                border: none;
+            }
+            .sign h2, .sign p, .list h3, .list ul {
+                font-size: 24pt;
+            }
+            .sign .emoji {
+                font-size: 72pt;
+            }
+            .fly {
+                font-size: 24pt;
             }
         }
     </style>
@@ -40,11 +105,35 @@
 <body>
 
 <div class="sign">
-    <!-- ... (all original content remains unchanged) ... -->
-</div>
-
-<div class="back-button-container">
-    <button class="back-button" onclick="window.location.href='https://skinny-pinks.github.io/my-website/Caregiver_Command_Center.html'">Back to Caregiver Command Center</button>
+    <h2>Only Non-Food Items Here!</h2>
+    <p>Please keep food waste out of this bin.</p>
+    <div class="list-container">
+        <div class="list">
+            <h3>Accepted:</h3>
+            <ul>
+                <li>📰 Paper</li>
+                <li>🛍️ Plastic</li>
+                <li>🪙 Metal</li>
+            </ul>
+        </div>
+        <div class="list">
+            <h3>Unacceptable:</h3>
+            <ul>
+                <li>🍗 Food Scraps</li>
+                <li>💧 Liquids</li>
+                <li>☣️ Hazardous Materials</li>
+            </ul>
+        </div>
+    </div>
+    <p>Help us keep our environment clean and fly-free by disposing of non-food items only.</p>
+    <p>No Food, No Flies, Just Clean!</p>
+    <div class="fly fly1">🪰</div>
+    <div class="fly fly2">🪰</div>
+    <div class="fly fly3">🪰</div>
+    <div class="fly fly4">🪰</div>
+    <div class="fly fly5">🪰</div>
+    <div class="fly fly6">🪰</div>
+    <div class="fly fly7">🪰</div>
 </div>
 
 </body>
