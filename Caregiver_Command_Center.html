@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f0f0f0;
+            background: linear-gradient(to bottom right, #f0f0f0, #ffffff);
         }
         .container {
             max-width: 800px;
@@ -17,27 +17,71 @@
             background: #fff;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
         h1 {
             color: #333;
             text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        h1::after {
+            content: '';
+            width: 50px;
+            height: 5px;
+            background: #007BFF;
+            display: block;
+            margin: 10px auto;
+            border-radius: 5px;
         }
         ul {
             list-style-type: none;
             padding: 0;
         }
         li {
-            margin: 10px 0;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
         }
         a {
             text-decoration: none;
             color: #007BFF;
             font-size: 18px;
+            margin-left: 10px;
+            transition: color 0.3s, transform 0.3s;
         }
         a:hover {
-            text-decoration: underline;
+            color: #0056b3;
+            transform: scale(1.05);
+        }
+        .icon {
+            font-size: 24px;
+            color: #007BFF;
+        }
+        .description {
+            margin-left: 34px;
+            color: #666;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .button {
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background: #0056b3;
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
 
@@ -45,14 +89,19 @@
     <h1>Caregiver Command Center</h1>
     <ul>
         <li>
+            <i class="fas fa-trash-alt icon"></i>
             <a href="https://skinny-pinks.github.io/my-website/Trash_Can_Area.html">Trash Can Area</a>
-            <p>Instructions and signs for proper trash disposal.</p>
+            <p class="description">Instructions and signs for proper trash disposal.</p>
         </li>
         <li>
+            <i class="fas fa-sink icon"></i>
             <a href="https://skinny-pinks.github.io/my-website/Home_Signs_Collection.html">Kitchen Sink Maintenance</a>
-            <p>Guidelines and signs for maintaining the kitchen sink area.</p>
+            <p class="description">Guidelines and signs for maintaining the kitchen sink area.</p>
         </li>
     </ul>
+    <div class="button-container">
+        <button class="button">Explore More</button>
+    </div>
 </div>
 
 </body>
