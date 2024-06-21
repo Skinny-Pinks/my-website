@@ -10,7 +10,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #fdfd96; /* Light yellow background */
+            background: linear-gradient(to bottom right, #fdfd96, #fffacd);
             margin: 0;
         }
         .sign {
@@ -27,9 +27,12 @@
         }
         .sign h2 {
             color: #ff0000;
-            font-size: 5vw;
+            font-size: 6vw;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px #aaa;
+            text-shadow: 3px 3px 6px #aaa;
+            background: linear-gradient(to right, #ff6666, #ff0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .sign p {
             font-size: 3.5vw;
@@ -102,8 +105,8 @@
 <body>
 
 <div class="sign">
-    <h2>Dispose of Non-Food Items Only</h2>
-    <p>Please do not throw away food waste.</p>
+    <h2>Only Non-Food Items Here!</h2>
+    <p>Please keep food waste out of this bin.</p>
     <div class="list-container">
         <div class="list">
             <h3>Accepted:</h3>
@@ -114,7 +117,7 @@
             </ul>
         </div>
         <div class="list">
-            <h3>Not Accepted:</h3>
+            <h3>Unacceptable:</h3>
             <ul>
                 <li>🍗 Food Scraps</li>
                 <li>💧 Liquids</li>
@@ -122,7 +125,8 @@
             </ul>
         </div>
     </div>
-    <p>Help us keep our environment clean by disposing of non-food items only.</p>
+    <p>Help us keep our environment clean and fly-free by disposing of non-food items only.</p>
+    <p>No Food, No Flies, Just Clean!</p>
     <div class="fly fly1">🪰</div>
     <div class="fly fly2">🪰</div>
     <div class="fly fly3">🪰</div>
