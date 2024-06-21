@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- ... (previous head content remains unchanged) ... -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trash Can Area</title>
     <style>
-        /* ... (previous styles remain unchanged) ... */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom right, #fdfd96, #fffacd);
+            margin: 0;
+            padding: 20px;
+        }
+        .sign {
+            position: relative;
+            border: 5px solid #ff0000;
+            background-color: #fff;
+            padding: 30px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            width: 100%;
+            max-width: 1000px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            margin-bottom: 60px;
+        }
+        /* ... (rest of your original styles) ... */
 
         .back-button-container {
-            position: fixed;
-            bottom: 20px;
-            left: 0;
-            width: 100%;
-            text-align: center;
+            margin-top: 20px;
         }
 
         .back-button {
@@ -37,11 +57,39 @@
 <body>
 
 <div class="sign">
-    <!-- ... (previous sign content remains unchanged) ... -->
+    <h2>Only Non-Food Items Here!</h2>
+    <p>Please keep food waste out of this bin.</p>
+    <div class="list-container">
+        <div class="list">
+            <h3>Accepted:</h3>
+            <ul>
+                <li>📰 Paper</li>
+                <li>🛍️ Plastic</li>
+                <li>🪙 Metal</li>
+            </ul>
+        </div>
+        <div class="list">
+            <h3>Unacceptable:</h3>
+            <ul>
+                <li>🍗 Food Scraps</li>
+                <li>💧 Liquids</li>
+                <li>☣️ Hazardous Materials</li>
+            </ul>
+        </div>
+    </div>
+    <p>Help us keep our environment clean and fly-free by disposing of non-food items only.</p>
+    <p>No Food, No Flies, Just Clean!</p>
+    <div class="fly fly1">🪰</div>
+    <div class="fly fly2">🪰</div>
+    <div class="fly fly3">🪰</div>
+    <div class="fly fly4">🪰</div>
+    <div class="fly fly5">🪰</div>
+    <div class="fly fly6">🪰</div>
+    <div class="fly fly7">🪰</div>
 </div>
 
 <div class="back-button-container">
-    <button class="back-button" onclick="window.location.href='https://skinny-pinks.github.io/my-website/'">Back to Home</button>
+    <button class="back-button" onclick="window.location.href='https://skinny-pinks.github.io/my-website/Caregiver_Command_Center.html'">Back to Caregiver Command Center</button>
 </div>
 
 </body>
