@@ -14,6 +14,7 @@
             margin: 0;
         }
         .sign {
+            position: relative;
             border: 3px solid #ff0000;
             background-color: #fff;
             padding: 20px;
@@ -42,6 +43,15 @@
             color: #ff0000;
             text-decoration: line-through;
         }
+        .fly {
+            position: absolute;
+            font-size: 3vw;
+        }
+        .fly1 { top: 10%; left: 15%; transform: rotate(10deg); }
+        .fly2 { top: 20%; right: 10%; transform: rotate(-15deg); }
+        .fly3 { bottom: 15%; left: 25%; transform: rotate(20deg); }
+        .fly4 { bottom: 10%; right: 20%; transform: rotate(-5deg); }
+        .fly5 { top: 5%; right: 40%; transform: rotate(30deg); }
         @media print {
             body {
                 height: auto;
@@ -59,6 +69,9 @@
             .sign .emoji {
                 font-size: 72pt;
             }
+            .fly {
+                font-size: 24pt;
+            }
         }
     </style>
 </head>
@@ -70,6 +83,11 @@
     <p>No food waste in this trash can.</p>
     <div class="emoji no">🚫🍗</div>
     <p><strong>Thank you!</strong></p>
+    <div class="fly fly1">🪰</div>
+    <div class="fly fly2">🪰</div>
+    <div class="fly fly3">🪰</div>
+    <div class="fly fly4">🪰</div>
+    <div class="fly fly5">🪰</div>
 </div>
 
 </body>
