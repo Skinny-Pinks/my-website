@@ -3,54 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Signs Collection</title>
+    <title>Kitchen Sink Area</title>
     <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
         .sign {
-            border: 2px solid black;
+            border: 3px solid #ff0000;
+            background-color: #fff;
             padding: 20px;
             margin: 10px;
             font-family: Arial, sans-serif;
             text-align: center;
-            width: 300px;
+            width: 100%;
+            max-width: 700px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            page-break-after: always;
+        }
+        .sign h2 {
+            color: #ff0000;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .sign p {
+            font-size: 22px;
+            margin: 15px 0;
+        }
+        .sign .emoji {
+            font-size: 100px;
             display: inline-block;
+            margin: 10px;
+        }
+        .sign .no {
+            color: #ff0000;
+            text-decoration: line-through;
         }
     </style>
 </head>
 <body>
 
 <div class="sign">
-    <h2>Please do not leave dirty dishes in the sink.</h2>
-    <p>Kindly wash them or place them in the dishwasher.</p>
-    <p><strong>Thank you!</strong></p>
-</div>
-
-<div class="sign">
-    <h2>Please keep the garbage disposal clear.</h2>
-    <p>Only food items go here. Non-food items go in the trash can.</p>
-    <p><strong>Thank you!</strong></p>
-</div>
-
-<div class="sign">
-    <h2>Please dispose of non-food items here.</h2>
-    <p>No food waste in this trash can.</p>
-    <p><strong>Thank you!</strong></p>
-</div>
-
-<div class="sign">
-    <h2>Please help keep the home tidy.</h2>
-    <p>Clean up any messes you make and leave areas as you found them.</p>
-    <p><strong>Thank you!</strong></p>
-</div>
-
-<div class="sign">
-    <h2>Please keep the bathroom clean.</h2>
-    <p>Dispose of trash properly and wipe down surfaces after use.</p>
-    <p><strong>Thank you!</strong></p>
-</div>
-
-<div class="sign">
-    <h2>Please remove your shoes upon entering.</h2>
-    <p>This helps keep the home clean.</p>
+    <div class="emoji no">🍽️</div>
+    <h2>All dirty dishes should be in the dishwasher.</h2>
+    <p>The dishwasher should run once it's full.</p>
+    <p>Use liquid soap to fill half of the door.</p>
+    <div class="emoji">🧼</div>
     <p><strong>Thank you!</strong></p>
 </div>
 
