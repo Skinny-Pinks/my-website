@@ -35,11 +35,47 @@
         .checklist input {
             margin-right: 10px;
         }
+        .audio-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .audio-buttons button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .notification-link {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 18px;
+        }
+        .notification-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .notification-link a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <div class="content">
         <h1>Caregiver's Guidelines</h1>
+
+        <div class="notification-link">
+            <a href="https://forms.gle/YqHhCRUwTJkUnqZh8" target="_blank">Complete the Checklist to Notify John</a>
+        </div>
+
+        <div class="audio-buttons">
+            <button onclick="document.getElementById('englishAudio').play()">Play English Audio</button>
+            <audio id="englishAudio" src="URL_TO_ENGLISH_AUDIO_FILE"></audio>
+
+            <button onclick="document.getElementById('spanishAudio').play()">Play Spanish Audio</button>
+            <audio id="spanishAudio" src="URL_TO_SPANISH_AUDIO_FILE"></audio>
+
+            <button onclick="document.getElementById('hindiAudio').play()">Play Hindi Audio</button>
+            <audio id="hindiAudio" src="URL_TO_HINDI_AUDIO_FILE"></audio>
+        </div>
 
         <h2>Cleaning and Disinfecting:</h2>
         <p>Clear and disinfect the kitchen countertops, including the island, at least once per shift.</p>
@@ -71,6 +107,10 @@
             <li><input type="checkbox"> Is there anything in the sink that's blocking the garbage disposal?</li>
             <li><input type="checkbox"> Is there any food or fly-making material in the trash can that should be in the garbage disposal?</li>
         </ul>
+
+        <div class="notification-link">
+            <a href="https://forms.gle/YqHhCRUwTJkUnqZh8" target="_blank">Complete the Checklist to Notify John</a>
+        </div>
     </div>
 </body>
 </html>
