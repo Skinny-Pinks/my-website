@@ -3,114 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caregiver's Guidelines</title>
+    <title>Kitchen Guidelines</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Arial', sans-serif;
+            background-color: black;
+            color: white;
             margin: 20px;
-            padding: 20px;
-            background-color: #f4f4f4;
-            color: #333;
+            line-height: 1.6;
         }
-        h1 {
-            text-align: center;
-            color: #444;
+        h1, h2 {
+            color: #FF00FF;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 2px solid #FF00FF;
+            border-radius: 10px;
+            background-color: rgba(255, 0, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .section:hover {
+            transform: scale(1.02);
+            transition: transform 0.3s ease;
+        }
+        .important {
+            color: #FF00FF;
+            font-weight: bold;
+        }
+        .emphasis {
+            color: #FF00FF;
+            font-style: italic;
+        }
+        .collapsible {
+            cursor: pointer;
+            padding: 10px;
+            border: none;
+            background: none;
+            color: #FF00FF;
+            font-size: 1.2em;
+            text-align: left;
+        }
+        .collapsible::after {
+            content: '\002B'; /* Plus sign */
+            font-size: 1.2em;
+            float: right;
+        }
+        .collapsible.active::after {
+            content: '\2212'; /* Minus sign */
         }
         .content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            overflow: hidden;
+            padding-top: 10px;
         }
-        .checklist {
-            list-style: none;
-            padding: 0;
+        .icon {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 100px;
+            height: 100px;
+            opacity: 0.1;
         }
-        .checklist li {
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-        .checklist input {
-            margin-right: 10px;
-        }
-        .audio-buttons {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .audio-buttons button {
-            margin: 5px;
-            padding: 10px 20px;
-            font-size: 16px;
-        }
-        .notification-link {
-            text-align: center;
-            margin: 20px 0;
-            font-size: 18px;
-        }
-        .notification-link a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        .notification-link a:hover {
-            text-decoration: underline;
+        .section {
+            animation: fadeIn 1s ease-in;
         }
     </style>
 </head>
 <body>
+
+<h1>Kitchen Guidelines</h1>
+
+<div class="section">
+    <h2>Cleaning Instructions</h2>
+    <p>Per the 5 pages of written notes, please clear and disinfect the Kitchen counter tops at least one time per shift. This includes the island.</p>
+    <img src="https://img.icons8.com/ios-filled/100/FF00FF/broom.png" class="icon" alt="Broom Icon">
+</div>
+
+<div class="section">
+    <h2 class="collapsible">Storage Instructions</h2>
     <div class="content">
-        <h1>Caregiver's Guidelines</h1>
-
-        <div class="notification-link">
-            <a href="https://forms.gle/YqHhCRUwTJkUnqZh8" target="_blank">Complete the Checklist to Notify John</a>
-        </div>
-
-        <div class="audio-buttons">
-            <button onclick="document.getElementById('englishAudio').play()">Play English Audio</button>
-            <audio id="englishAudio" src="URL_TO_ENGLISH_AUDIO_FILE"></audio>
-
-            <button onclick="document.getElementById('spanishAudio').play()">Play Spanish Audio</button>
-            <audio id="spanishAudio" src="URL_TO_SPANISH_AUDIO_FILE"></audio>
-
-            <button onclick="document.getElementById('hindiAudio').play()">Play Hindi Audio</button>
-            <audio id="hindiAudio" src="URL_TO_HINDI_AUDIO_FILE"></audio>
-        </div>
-
-        <h2>Cleaning and Disinfecting:</h2>
-        <p>Clear and disinfect the kitchen countertops, including the island, at least once per shift.</p>
-
-        <h2>Proper Storage:</h2>
-        <p>Store all supplies and food in their correct locations (kitchen, pantry, or dining room shelves). The kitchen and dining room tables are NOT for storage. Please do not pile items on these tables.</p>
-
-        <h2>Familiarization:</h2>
-        <p>Take a few minutes to familiarize yourself with the pantry and storage areas. If unsure about where an item is stored, ask John or leave the items on the island.</p>
-
-        <h2>Reporting Damages:</h2>
-        <p>Report any damages or broken items (tableware, appliances, etc.) to John before the end of your shift.</p>
-
-        <h2>Grocery List Management:</h2>
-        <p>Add items to the Alexa grocery list if they are closed to empty or used up. Check the pantry for extra stock before adding to Alexa.</p>
-
-        <h2>Handling Food:</h2>
-        <p>Throw away old, spoiled, or inedible food. Remember, if you wouldn’t eat it, John won’t either. Throw it away. Discard older items in the refrigerator when replaced with new groceries. Discard leftover food unless instructed otherwise. Leftover food often goes bad and takes up space. If John doesn't eat it, it should be thrown away or given to the dog. Period. Store unopened, shelf-stable grocery items on the pantry shelves. Organize items before adding to Alexa. Put items away where they are currently stored.</p>
-
-        <h2>Groceries Handling:</h2>
-        <p>Store freezer items in the outside freezer, kitchen freezer, or prepare to eat soon. Ask if unsure. Store refrigerator items properly and discard expired items before storing new ones. If a cold item is left out by accident or for convenience, put it in the refrigerator or freezer when you are cleaning up.</p>
-
-        <h2>Kitchen Tools:</h2>
-        <p>Store kitchen tools in their specific places. Clean pans and pots properly before putting them away. If you don’t know where to store an item, ask John.</p>
-
-        <h2>Checklist Before Finishing Your Shift:</h2>
-        <ul class="checklist">
-            <li><input type="checkbox"> Is there anything on the table that should be put away?</li>
-            <li><input type="checkbox"> Is there anything in the sink that's blocking the garbage disposal?</li>
-            <li><input type="checkbox"> Is there any food or fly-making material in the trash can that should be in the garbage disposal?</li>
-        </ul>
-
-        <div class="notification-link">
-            <a href="https://forms.gle/YqHhCRUwTJkUnqZh8" target="_blank">Complete the Checklist to Notify John</a>
-        </div>
+        <p>All supplies and food have a correct storage location (“Pantry”) in either the kitchen, pantry, or dining room shelves.</p>
+        <p>The kitchen and Dining Room tables <span class="important">ARE NOT</span> a “store all” for any items. <span class="important">Please do not pile items on those tables</span> in lieu of putting them away.</p>
+        <p>Please take a few minutes to familiarize yourself with the pantry, pantry shelves and storage areas. If you aren’t sure where an item is stored, please ask me or leave those few items on the island for me to put away after your shift.</p>
+        <img src="https://img.icons8.com/ios-filled/100/FF00FF/shelf.png" class="icon" alt="Shelf Icon">
     </div>
+</div>
+
+<div class="section">
+    <h2 class="collapsible">Food Handling</h2>
+    <div class="content">
+        <p>If you damage or break items, tableware, appliances, etc., please let John know what occurred before the end of your shift.</p>
+        <p>Please add items that are <span class="important">CLOSED to empty or used up</span> to the Alexa grocery list. Check the pantry for extra or reserve stock before you add to Alexa.</p>
+        <p>Food that is old, spoiled, or inedible should be thrown away. If it’s gross, and you would not eat it, throw it out. If it hasn’t been already ordered, or stored in the Pantry. Throw away the older items in the refrigerator that have been replaced with new groceries. Unopened, shelf-stable grocery items are stored on the pantry shelves or wire racks as overstock. Look and organize before you add to Alexa. Put items away in an organized manner where they are currently stored.</p>
+        <p>Do not put the leftover food from her meals anywhere but the trash. It goes bad and takes up space. If she doesn’t eat it, it’s trash or dog food. <span class="important">Period</span>.</p>
+        <p>If a large amount was prepared for her meal, the food can be stored, but please ask. In some cases, I’ll let you take it home to eat later.</p>
+        <img src="https://img.icons8.com/ios-filled/100/FF00FF/food-and-wine.png" class="icon" alt="Food Icon">
+    </div>
+</div>
+
+<div class="section">
+    <h2 class="collapsible">General Rules</h2>
+    <div class="content">
+        <p>When putting away new groceries, freezer items go in the outside freezer, the kitchen freezer, or may be prepared to eat soon. <span class="important">ASK</span> if unsure. Refrigerator items go in the refrigerator after you throw out the same item that is expired. <span class="important">ASK</span>. If a cold item is left out by accident or for convenience, put it in the refrigerator or Freezer when you are cleaning up.</p>
+        <p>Kitchen tools are stored in specific places. <span class="important">ASK, if you don’t know</span>. The pans and pots are expensive. The skillets can be rinsed, wiped clean, washed over the sink after use, and put away in the rack under the island after use. The stainless steel can be rinsed and put in the dishwasher or hand cleaned with soap if lightly soiled. They all have a particular storage spot. <span class="important">ASK</span> if you don’t know. If you got it to use, put it back where you found it <span class="important">CLEAN</span>.</p>
+        <img src="https://img.icons8.com/ios-filled/100/FF00FF/kitchen-room.png" class="icon" alt="Kitchen Tools Icon">
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var coll = document.getElementsByClassName("collapsible");
+        for (var i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    });
+</script>
+
 </body>
 </html>
