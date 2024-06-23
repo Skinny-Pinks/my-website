@@ -79,15 +79,15 @@
 
 <h1>Kitchen Guidelines</h1>
 
-<div class="section">
-    <h2>Cleaning Instructions</h2>
+<div class="section" role="region" aria-labelledby="cleaning-instructions">
+    <h2 id="cleaning-instructions">Cleaning Instructions</h2>
     <p>Per the 5 pages of written notes, please clear and disinfect the Kitchen counter tops at least one time per shift. This includes the island.</p>
     <img src="https://img.icons8.com/ios-filled/100/FF00FF/broom.png" class="icon" alt="Broom Icon">
 </div>
 
-<div class="section">
-    <h2 class="collapsible">Storage Instructions</h2>
-    <div class="content">
+<div class="section" role="region" aria-labelledby="storage-instructions">
+    <button class="collapsible" aria-expanded="false" aria-controls="storage-content">Storage Instructions</button>
+    <div class="content" id="storage-content">
         <p>All supplies and food have a correct storage location (“Pantry”) in either the kitchen, pantry, or dining room shelves.</p>
         <p>The kitchen and Dining Room tables <span class="important">ARE NOT</span> a “store all” for any items. <span class="important">Please do not pile items on those tables</span> in lieu of putting them away.</p>
         <p>Please take a few minutes to familiarize yourself with the pantry, pantry shelves and storage areas. If you aren’t sure where an item is stored, please ask me or leave those few items on the island for me to put away after your shift.</p>
@@ -95,9 +95,9 @@
     </div>
 </div>
 
-<div class="section">
-    <h2 class="collapsible">Food Handling</h2>
-    <div class="content">
+<div class="section" role="region" aria-labelledby="food-handling">
+    <button class="collapsible" aria-expanded="false" aria-controls="food-content">Food Handling</button>
+    <div class="content" id="food-content">
         <p>If you damage or break items, tableware, appliances, etc., please let John know what occurred before the end of your shift.</p>
         <p>Please add items that are <span class="important">CLOSED to empty or used up</span> to the Alexa grocery list. Check the pantry for extra or reserve stock before you add to Alexa.</p>
         <p>Food that is old, spoiled, or inedible should be thrown away. If it’s gross, and you would not eat it, throw it out. If it hasn’t been already ordered, or stored in the Pantry. Throw away the older items in the refrigerator that have been replaced with new groceries. Unopened, shelf-stable grocery items are stored on the pantry shelves or wire racks as overstock. Look and organize before you add to Alexa. Put items away in an organized manner where they are currently stored.</p>
@@ -107,9 +107,9 @@
     </div>
 </div>
 
-<div class="section">
-    <h2 class="collapsible">General Rules</h2>
-    <div class="content">
+<div class="section" role="region" aria-labelledby="general-rules">
+    <button class="collapsible" aria-expanded="false" aria-controls="rules-content">General Rules</button>
+    <div class="content" id="rules-content">
         <p>When putting away new groceries, freezer items go in the outside freezer, the kitchen freezer, or may be prepared to eat soon. <span class="important">ASK</span> if unsure. Refrigerator items go in the refrigerator after you throw out the same item that is expired. <span class="important">ASK</span>. If a cold item is left out by accident or for convenience, put it in the refrigerator or Freezer when you are cleaning up.</p>
         <p>Kitchen tools are stored in specific places. <span class="important">ASK, if you don’t know</span>. The pans and pots are expensive. The skillets can be rinsed, wiped clean, washed over the sink after use, and put away in the rack under the island after use. The stainless steel can be rinsed and put in the dishwasher or hand cleaned with soap if lightly soiled. They all have a particular storage spot. <span class="important">ASK</span> if you don’t know. If you got it to use, put it back where you found it <span class="important">CLEAN</span>.</p>
         <img src="https://img.icons8.com/ios-filled/100/FF00FF/kitchen-room.png" class="icon" alt="Kitchen Tools Icon">
@@ -125,8 +125,10 @@
                 var content = this.nextElementSibling;
                 if (content.style.display === "block") {
                     content.style.display = "none";
+                    this.setAttribute('aria-expanded', 'false');
                 } else {
                     content.style.display = "block";
+                    this.setAttribute('aria-expanded', 'true');
                 }
             });
         }
