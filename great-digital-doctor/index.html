@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080916">
+  <meta name="description" content="Home of the Great Digital Doctor. Call 405-618-1416.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Great Digital Doctor">
+  <meta property="og:description" content="Home of the Great Digital Doctor. Call 405-618-1416.">
+  <title>The Great Digital Doctor — Home</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #f7f8ff;
+      --muted: #bfc6df;
+      --cyan: #64edfa;
+      --violet: #ad87ff;
+      --bg: #080916;
+    }
+    * { box-sizing: border-box; }
+    html { min-height: 100%; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse 48% 38% at 16% 25%, rgba(47, 110, 221, .21), transparent 76%),
+        radial-gradient(ellipse 55% 55% at 85% 75%, rgba(130, 66, 218, .19), transparent 77%),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .1;
+      background-image:
+        linear-gradient(rgba(255,255,255,.16) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.16) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: linear-gradient(to bottom, transparent 10%, black 100%);
+    }
+    a { color: inherit; }
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 16px;
+      z-index: 20;
+      padding: 12px 18px;
+      background: white;
+      color: #111;
+      border-radius: 12px;
+    }
+    .skip-link:focus { top: 16px; }
+    .shell {
+      position: relative;
+      z-index: 1;
+      max-width: 1260px;
+      min-height: 100vh;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      padding: clamp(22px, 4vw, 48px);
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      text-decoration: none;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+    }
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(132, 239, 255, .43);
+      border-radius: 13px;
+      background: linear-gradient(140deg, rgba(67,204,238,.17), rgba(160,105,247,.2));
+      box-shadow: inset 0 0 22px rgba(78,229,242,.13);
+      color: var(--cyan);
+      font-size: 1.2rem;
+      letter-spacing: 0;
+    }
+    .header-phone {
+      font-weight: 650;
+      text-decoration: none;
+      font-size: .94rem;
+      color: var(--muted);
+      transition: color .2s;
+    }
+    .header-phone:hover { color: white; }
+    main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.16fr) minmax(250px, .84fr);
+      align-items: center;
+      gap: 34px;
+      padding: 80px 0 110px;
+    }
+    .copy { position: relative; z-index: 2; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 29px;
+      font-size: clamp(.68rem, 1.5vw, .83rem);
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: .19em;
+      color: #b9dbed;
+    }
+    .signal {
+      flex: none;
+      width: 9px;
+      height: 9px;
+      background: var(--cyan);
+      border-radius: 50%;
+      box-shadow: 0 0 16px rgba(100,237,250,.9);
+    }
+    h1 {
+      max-width: 800px;
+      margin: 0;
+      font-size: clamp(3.35rem, 8.15vw, 7.8rem);
+      font-weight: 850;
+      letter-spacing: -.072em;
+      line-height: .98;
+    }
+    h1 span {
+      display: block;
+      margin-top: .12em;
+      padding-bottom: .09em;
+      background: linear-gradient(98deg, #70eeff 2%, #8dbdff 48%, #bd87ff 94%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .rule {
+      width: 70px;
+      height: 2px;
+      margin: 39px 0 28px;
+      background: linear-gradient(to right, var(--cyan), var(--violet));
+    }
+    .intro {
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
+      line-height: 1.6;
+      color: var(--muted);
+      margin: 0 0 28px;
+    }
+    .call {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      min-height: 66px;
+      padding: 16px 25px;
+      border-radius: 17px;
+      background: linear-gradient(112deg, #78f0fb, #a6b0ff);
+      box-shadow: 0 12px 48px rgba(83, 195, 240, .15);
+      color: #10172c;
+      text-decoration: none;
+      font-weight: 850;
+      font-size: clamp(1rem, 2.3vw, 1.16rem);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .call:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 60px rgba(83, 195, 240, .3);
+    }
+    a:focus-visible { outline: 3px solid white; outline-offset: 5px; }
+    .visual {
+      min-height: 480px;
+      position: relative;
+      display: grid;
+      place-items: center;
+      isolation: isolate;
+    }
+    .visual::before {
+      content: "";
+      position: absolute;
+      width: min(38vw, 440px);
+      height: min(38vw, 440px);
+      min-width: 260px;
+      min-height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(91,123,230,.23), rgba(72,44,141,.12) 57%, transparent 72%);
+      filter: blur(26px);
+      z-index: -1;
+    }
+    .orbit {
+      position: absolute;
+      border: 1px solid rgba(135, 169, 255, .17);
+      border-radius: 50%;
+      aspect-ratio: 1;
+    }
+    .orbit.one { width: 98%; max-width: 475px; transform: rotate(-29deg) scaleY(.78); }
+    .orbit.two { width: 82%; max-width: 395px; transform: rotate(43deg) scaleY(.72); border-color: rgba(122,243,247,.29); }
+    .orbit.three { width: 70%; max-width: 332px; border-color: rgba(182,128,253,.3); }
+    .core {
+      width: min(58%, 260px);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 1px solid rgba(189,213,255,.32);
+      background: linear-gradient(145deg, rgba(61,103,190,.3), rgba(124,65,196,.24));
+      box-shadow: inset 0 0 50px rgba(69, 202, 238, .08), 0 0 90px rgba(71,80,200,.16);
+      font-size: clamp(4rem, 8vw, 7rem);
+      font-weight: 850;
+      letter-spacing: -.1em;
+      color: white;
+      text-shadow: 0 0 40px rgba(123,218,255,.32);
+    }
+    .star { position: absolute; color: var(--cyan); text-shadow: 0 0 18px currentColor; }
+    .star.s1 { top: 15%; right: 17%; font-size: 23px; }
+    .star.s2 { bottom: 18%; left: 13%; color: var(--violet); font-size: 16px; }
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 1px solid rgba(195,205,250,.13);
+      padding-top: 23px;
+      color: #9ea8c7;
+      font-size: .75rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+    footer a { text-decoration: none; color: inherit; }
+    footer a:hover { color: white; }
+    @media (max-width: 780px) {
+      .shell { padding: 23px 22px; }
+      main { grid-template-columns: 1fr; padding: 80px 0 30px; gap: 5px; }
+      .visual { min-height: 285px; opacity: .78; }
+      .orbit.one { width: min(80vw, 300px); }
+      .orbit.two { width: min(68vw, 255px); }
+      .orbit.three { width: min(54vw, 205px); }
+      .core { width: 150px; font-size: 4.7rem; }
+      .intro { margin-bottom: 23px; }
+      h1 { font-size: clamp(3.1rem, 12vw, 6rem); }
+    }
+    @media (max-width: 410px) {
+      .brand { font-size: .64rem; letter-spacing: .1em; }
+      .brand-mark { width: 35px; height: 35px; }
+      .header-phone { font-size: .8rem; }
+      h1 { font-size: 3.02rem; }
+      footer { font-size: .63rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#home">Skip to content</a>
+  <div class="shell">
+    <header>
+      <a class="brand" href="./" aria-label="The Great Digital Doctor home">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>THE GREAT DIGITAL DOCTOR</span>
+      </a>
+      <a class="header-phone" href="tel:+14056181416">405-618-1416</a>
+    </header>
+    <main id="home">
+      <div class="copy">
+        <div class="eyebrow"><span class="signal" aria-hidden="true"></span>Home of the Great Digital Doctor</div>
+        <h1>The Great <span>Digital Doctor.</span></h1>
+        <div class="rule" aria-hidden="true"></div>
+        <p class="intro">Your digital doctor is just a phone call away.</p>
+        <a class="call" href="tel:+14056181416" aria-label="Call the Great Digital Doctor at 405-618-1416">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.35 1.91.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.25a2 2 0 0 1 2.11-.45c.9.33 1.85.56 2.81.68A2 2 0 0 1 22 16.92z"/></svg>
+          Call 405-618-1416
+        </a>
+      </div>
+      <div class="visual" aria-hidden="true">
+        <div class="orbit one"></div><div class="orbit two"></div><div class="orbit three"></div>
+        <div class="core">DD</div>
+        <span class="star s1">✧</span><span class="star s2">✦</span>
+      </div>
+    </main>
+    <footer>
+      <span>The Great Digital Doctor</span>
+      <a href="tel:+14056181416">405-618-1416</a>
+    </footer>
+  </div>
+</body>
+</html>
